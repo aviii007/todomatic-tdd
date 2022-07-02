@@ -106,3 +106,4 @@ const wasEditing = usePrevious(isEditing);
     <li className="todo"> {isEditing ? editingTemplate : viewTemplate} </li>
   );
   }
+  

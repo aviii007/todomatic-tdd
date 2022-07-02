@@ -45,7 +45,7 @@ function App(props) {
     });
     setTasks(updatedTasks);
   }
-
+  
   function deleteTask(id) {
     const remainingTasks = tasks.filter(task => id !== task.id);
     setTasks(remainingTasks);
@@ -61,12 +61,12 @@ function App(props) {
     });
     setTasks(editedTaskList);
   }
+  
+  
 
+  
 
-
-
-
-
+  
   const taskList = tasks
 .filter(FILTER_MAP[filter])
 .map((task) => (
@@ -88,7 +88,7 @@ const filterList = FILTER_NAMES.map(name => (
   isPressed={name === filter}
   setFilter={setFilter}/>
 ));
-
+  
   const tasksNoun = taskList.length !== 1 ? 'tasks' : 'task';
 const headingText = `${taskList.length} ${tasksNoun} remaining`;
 
@@ -105,7 +105,7 @@ useEffect(() => {
 
   return (
     <div className="todoapp stack-large">
-      <h1>TodoMatic</h1>
+      <h1 data-testid="heading-todomatic">TodoMatic</h1>
       <Form addTask={addTask} />
 
       <div className="filters btn-group stack-exception">
@@ -123,3 +123,6 @@ useEffect(() => {
 </ul>
 
     </div>
+  );
+}
+export default App;
