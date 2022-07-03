@@ -14,23 +14,27 @@ function Form(props) {
     }
   }
   return (
-    <form data-testid="todo-form" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} id="add-todo-form">
       <h2 className="label-wrapper">
-        <label htmlFor="new-todo-input" className="label__lg" data-testid = "todo-input-label">
+        <label htmlFor="new-todo-input" className="label__lg">
           What needs to be done?
         </label>
       </h2>
       <input
         type="text"
-        data-testid = "todo-input-id"
         id="new-todo-input"
         className="input input__lg"
+        data-testid="new-todo-input"
         name="text"
         autoComplete="off"
         value={name}
         onChange={handleChange}
       />
-      <button type="submit" data-testid="add-btn" className="btn btn__primary btn__lg" >
+      <button
+        data-testid="add-button"
+        type="submit"
+        className="btn btn__primary btn__lg"
+      >
         Add
       </button>
     </form>
